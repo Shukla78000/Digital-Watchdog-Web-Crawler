@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form styling */
+        form {
+            background: linear-gradient(135deg, #1d1d5a, #570861);
+            border: 2px solid #3c3c5c;
+            border-radius: 10px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            width: 300px;
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6f61;
+            font-size: 1.8em;
+            border-bottom: 2px solid #3c3c5c;
+            padding-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 1em;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #202020;
+            border: 1px solid #3c3c5c;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #15f220;
+            box-shadow: 0 0 5px #15f220;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #2a2a72;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #1d1d5a;
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: #ff6f61;
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function formValidate(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+
+            if (name === 'admin' && pass === '123456') {
+                window.location.href = 'index.html';
+            } else {
+                alert("Incorrect username or password.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="formValidate(event)">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" autocomplete="off">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="off">
+
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

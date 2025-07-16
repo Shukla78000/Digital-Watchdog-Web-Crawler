@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Digital Watchdog</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Header styling */
+        header {
+            position: relative;
+            background: linear-gradient(135deg, #0a0a23, #571c4a);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #3c3c5c;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        /* Icon button styling */
+        .icon-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #2a2a72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 100;
+        }
+
+        .icon-btn:hover {
+            background-color: #1d1d5a;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 55px;
+            left: 15px;
+            background-color: #202020;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu button {
+            display: block;
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            border: none;
+            text-align: left;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .dropdown-menu button:hover {
+            background-color: #3c3c5c;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .section {
+            background-color: #202020;
+            border: 1px solid #3c3c5c;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            color: #ff6f61;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #bbb;
+        }
+        .content {
+  display: flex;
+  align-items: center;
+}
+
+.paragraph-left,
+.paragraph-right {
+  padding: 10px;
+  width: 45%;
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: black;
+  height: 100%;
+}
+
+
+        /* Responsive layout for smaller screens */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="icon-btn" id="icon-btn">☰</button>
+        <div class="dropdown-menu" id="dropdown-menu">
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='about.html'">About Us</button>
+            <button onclick="location.href='mailto:namitjain180@gmail.com'">Contact</button>
+        </div>
+        <h1>
+            <img src="img1.jpg" style="width: 50px; height: 50px; margin-right: 10px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
+            A Digital Watchdog
+        </h1>
+        <p>A one-go website for technocrats</p>
+    </header>
+
+    <div class="container">
+        <!-- Placeholder for sections -->
+        <div class="section">
+            <h2>Welcome to Digital Watchdog</h2>
+            <p>Your one-stop destination for the latest in cybersecurity. From breaking news on threats and innovations to practical tips and legal updates, we cover everything to keep you informed and secure in the digital world.
+                <br>Join us in building a safer cyberspace. Stay informed, stay secure!
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Project Mentors</h2>
+            <section class = "content">
+            <div class="paragraph-left">
+                <p> <img src="img4.png" style="width: 140px; height: 140px; margin-right: 40px; vertical-align: middle; "> <br>
+                    Dr. Alok Jhaldiyal <br>
+                     He is our esteemed mentor, providing valuable 
+                     <br>guidance and expertise that drive the success of our project.
+                 </p>  
+            </div>
+            <div class="vertical-line"></div>
+            <div class="paragraph-right">
+                <p><img src="img3.png" style="width: 140px; height: 140px; margin-right: 40px; vertical-align: middle;"><br>
+                    Thank You, Dr. Ram Kumar! <br>
+                    We sincerely appreciate your positive feedback and support. 
+                    <br>Your encouragement means a lot to us!
+                </p>
+            </section>    
+            </div>
+            
+        </div>
+
+        <div class="section">
+            <h2>Project Member</h2>
+            <p>Saksham garg <br> Tarunpreet kaur <br>Namit jain <br>Abinav shukla <br></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('icon-btn').addEventListener('click', () => {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>
